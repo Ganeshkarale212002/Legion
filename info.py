@@ -16,6 +16,7 @@ API_ID = int(environ.get('API_ID', '1736204'))
 API_HASH = environ.get('API_HASH', '890d40e0f91a4de32dec2965444b2cbe')
 BOT_TOKEN = environ.get('BOT_TOKEN', '5712412804:AAHEJKubytsmtvV_MIYs3R45qOM5a-NKDEQ')
 
+DWLD = environ.get("DWLD", 'HeroFlix/2198')
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
