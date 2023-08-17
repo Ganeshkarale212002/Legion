@@ -14,7 +14,7 @@ def is_enabled(value, default):
 SESSION = environ.get('SESSION', 'Media_search')
 API_ID = int(environ.get('API_ID', '1736204'))
 API_HASH = environ.get('API_HASH', '890d40e0f91a4de32dec2965444b2cbe')
-BOT_TOKEN = environ.get('BOT_TOKEN', '6062946689:AAFn8I347oOIzsu9e4fjm-3adqcI4QcWO8k')
+BOT_TOKEN = environ.get('BOT_TOKEN', '5712412804:AAHEJKubytsmtvV_MIYs3R45qOM5a-NKDEQ')
 
 
 # Bot settings
@@ -27,13 +27,14 @@ CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHAN
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '1058015838').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('AUTH_CHANNEL', '-1001521700370')
-auth_grp = environ.get('AUTH_GROUP', '-1001806026278')
+auth_grp = environ.get('AUTH_GROUP', '')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://cheryl:cheryl@cheryl.v9cadpe.mongodb.net/?retryWrites=true&w=majority")
-DATABASE_NAME = environ.get('DATABASE_NAME', "premium")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'premium')
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Testing:Testing@cluster0.fkelfqj.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_NAME = environ.get('DATABASE_NAME', "Ariana")
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Ariana')
+
 
 # Others
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001652564383'))
@@ -41,8 +42,8 @@ SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'herofeedbot')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
 IMDB = is_enabled((environ.get('IMDB', "False")), False)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), True)
-CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", '🎗<a href="https://telegram.me/HEROFLiX"><b><i>{file_name}</i></b></a>')
-BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", "<b><i>{file_caption}</i></b>")
+CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", '<a href="https://telegram.me/HEROFLiX"><b><i>{file_name}</i></b></a>')
+BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", "<a href="https://telegram.me/HEROFLiX"><b><i>{file_caption}</i></b></a>")
 IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "🎗 <i><b>{title} ({year}) {kind} </b> \n━━━━━━━━━━━━━━━━\n🎭 </i><i><b>Genre › {genres}\n⭐ Rating › {rating} / 10 </b>\n📚 </i><i><b>Story</b> › {plot} </i>")
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
@@ -51,7 +52,7 @@ INDEX_REQ_CHANNEL = int(environ.get('INDEX_REQ_CHANNEL', LOG_CHANNEL))
 FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '')).split()]
 MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "True")), True)
 PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
-PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "True")), True)
+PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "False")), False)
 
 LOG_STR = "Current Cusomized Configurations are:-\n"
 LOG_STR += ("IMDB Results are enabled, Bot will be showing imdb details for you queries.\n" if IMDB else "IMBD Results are disabled.\n")
