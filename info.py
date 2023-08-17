@@ -36,7 +36,8 @@ DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Testing:Testing@cluste
 DATABASE_NAME = environ.get('DATABASE_NAME', "Ariana")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Ariana')
 
-
+SHORTNER = environ.get('SHORTNER', 'easysky.in')
+SHORTNER_API = environ.get('SHORTNER_API', '8abee50e122616d233cb904039c4fe594fe8574c')
 # Others
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001652564383'))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'herofeedbot')
