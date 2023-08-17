@@ -827,8 +827,8 @@ async def manual_filters(client, message, text=False):
                                 reply_text, 
                                 disable_web_page_preview=True,
                                 reply_to_message_id=reply_id)
-                                await asyncio.sleep(900)
-                                await k.delete()
+                            await asyncio.sleep(900)
+                            await k.delete()
                         else:
                             button = eval(btn)
                             k = await client.send_message(
@@ -838,8 +838,8 @@ async def manual_filters(client, message, text=False):
                                 reply_markup=InlineKeyboardMarkup(button),
                                 reply_to_message_id=reply_id
                             )
-                                await asyncio.sleep(900)
-                                await k.delete()
+                            await asyncio.sleep(900)
+                            await k.delete()
                     elif btn == "[]":
                         k = await client.send_cached_media(
                             group_id,
@@ -847,8 +847,8 @@ async def manual_filters(client, message, text=False):
                             caption=reply_text or "",
                             reply_to_message_id=reply_id
                         )
-                            await asyncio.sleep(900)
-                            await k.delete()
+                        await asyncio.sleep(900)
+                        await k.delete()
                     else:
                         button = eval(btn)
                         k = await message.reply_cached_media(
@@ -857,8 +857,8 @@ async def manual_filters(client, message, text=False):
                             reply_markup=InlineKeyboardMarkup(button),
                             reply_to_message_id=reply_id
                         )
-                            await asyncio.sleep(900)
-                            await k.delete()
+                        await asyncio.sleep(900)
+                        await k.delete()
                 except Exception as e:
                     logger.exception(e)
                 break
