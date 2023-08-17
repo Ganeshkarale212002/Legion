@@ -21,7 +21,7 @@ DWLD = environ.get("DWLD", 'HeroFlix/2198')
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
-PICS = (environ.get('PICS', 'https://te.legra.ph/file/71eef93b310ace570b9cc.jpg https://te.legra.ph/file/71eef93b310ace570b9cc.jpg')).split()
+PICS = (environ.get('PICS', 'https://te.legra.ph/file/e2b658b220739f984b32a.jpg https://te.legra.ph/file/e2b658b220739f984b32a.jpg')).split()
 
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1058015838').split()]
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001638006524').split()]
