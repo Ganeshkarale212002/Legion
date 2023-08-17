@@ -2,7 +2,7 @@ import asyncio
 from pyrogram import Client, filters, enums
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong, PeerIdInvalid
-from info import ADMINS, LOG_CHANNEL, SUPPORT_CHAT, MELCOW_NEW_USERS
+from info import ADMINS, LOG_CHANNEL, SUPPORT_CHAT, MELCOW_NEW_USERS, DWLD
 from database.users_chats_db import db
 from database.ia_filterdb import Media
 from utils import get_size, temp, get_settings
@@ -36,8 +36,8 @@ async def save_group(bot, message):
             await bot.leave_chat(message.chat.id)
             return
         buttons = [[
-            InlineKeyboardButton('🌟Get Premium', url=f'https://telegram.me/HeroFlix/2184'),
-            InlineKeyboardButton('⚜ Updates', url='https://telegram.me/HeroFlix')
+            InlineKeyboardButton('📲 Support 📲', url=f"https://telegram.me/{SUPPORT_CHAT}"),
+            InlineKeyboardButton('🔆 Updates 🔆', url='https://telegram.me/HeroFlix')
         ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await message.reply_text(
@@ -53,9 +53,9 @@ async def save_group(bot, message):
                     except:
                         pass
                 temp.MELCOW['welcome'] = await message.reply_photo(
-                photo="https://te.legra.ph/file/71eef93b310ace570b9cc.jpg",                                              
-                                                 caption=f'<b><i>🌟 Welcome To "PREMiUM" 🌟\n\n🔆 You Can Get Any Movies, Web-Series, Anime, K-Dramas, Animation etc., here!</i></b>',
-                                                 reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('🔆彡[ @HEROFLiX ]彡🔆', url=f'https://telegram.me/heroflix') ] ] )
+                photo="https://graph.org/file/75d4fcc66598ea1ef4941.jpg",                                              
+                                                 caption=f'<b><i>🔆 "HEROFLiX • GROUP" 亗 🔆\n•───────────────────• \n⚜Hey {u.mention}, Welcome To HeroFlix • Group. You Can Request Any Movies, Web-Series, Anime, K-Dramas, Animation etc., here....</i></b>',
+                                                 reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('❓How To Download❓', url=f'https://telegram.me/{DWLD}') ] ] )
                 )
                 await asyncio.sleep(900)
                 await (temp.MELCOW['welcome']).delete()
