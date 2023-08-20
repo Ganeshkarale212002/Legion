@@ -136,7 +136,7 @@ async def advantage_spoll_choker(bot, query):
     if not movies:
         return await query.answer("❗Link Expired, Request Again ♻", show_alert=True)
     movie = movies[(int(movie_))]
-    await query.answer('Checking, Please Wait ♻️')
+    await query.answer("Checking, Please Wait ♻️ \n\n[ Don't Spam - Just Wait! ]", show_alert=True)
     k = await manual_filters(bot, query.message, text=movie)
     if k == False:
         files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
@@ -633,7 +633,10 @@ async def auto_filter(client, msg, spoll=False):
             return
         if 2 < len(message.text) < 100:
             search = message.text
-            files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
+            search_ = re.sub(
+                r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|:|series|bluray|latest|br((o|u)h?)*|^h(e|a)?(l)*(o)*|mal(ayalam)?|t(h)?emil|file|season(s)*|episode(s)*|und(o)*|kit(t(i|y)?)?o(w)?|thar(u)?(o)*w?|kittum(o)*|aya(k)*(um(o)*)?|full\smovie|any(one)|with\ssubtitle(s)?)",
+                "", search, flags=re.IGNORECASE)
+            files, offset, total_results = await get_search_results(search_.lower(), offset=0, filter=True)
             if not files:
                 if settings["spell_check"]:
                     return await advantage_spell_chok(msg)
