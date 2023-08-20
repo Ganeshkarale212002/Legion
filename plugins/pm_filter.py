@@ -634,7 +634,7 @@ async def auto_filter(client, msg, spoll=False):
         if 2 < len(message.text) < 100:
             search = message.text
             search_ = re.sub(
-                r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|:|series|bluray|latest||file|season(s)*|episode(s)*|anime|kdrama|horror|hd|in|full\smovie||with\ssubtitle(s)?)",
+                r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|:|and|&|series|file|season(s)*|episode(s)*|anime|kdrama|horror|hd|in|full\smovie||with\ssubtitle(s)?)",
                 "", search, flags=re.IGNORECASE)
             files, offset, total_results = await get_search_results(search_.lower(), offset=0, filter=True)
             if not files:
@@ -755,7 +755,7 @@ async def auto_filter(client, msg, spoll=False):
 
 async def advantage_spell_chok(msg):
     query = re.sub(
-        r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|:|series|bluray|latest||file|season(s)*|episode(s)*|anime|kdrama|horror|hd|in|full\smovie||with\ssubtitle(s)?)",
+        r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|:|series|and|&|file|season(s)*|episode(s)*|anime|kdrama|horror|hd|in|full\smovie||with\ssubtitle(s)?)",
         "", msg.text, flags=re.IGNORECASE)  # plis contribute some common words
     query = query.strip() + " movie"
     g_s = await search_gagala(query)
