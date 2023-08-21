@@ -1,27 +1,21 @@
 import asyncio
 import re
 import ast
+import logging
 import math
+import pyrogram
 from utils import get_shortlink
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from Script import script
-import pyrogram
-from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
-    make_inactive
-from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, P_TTI_SHOW_OFF, IMDB, \
-    SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE, DWLD
+from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, make_inactive
+from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, P_TTI_SHOW_OFF, IMDB, SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE, DWLD
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters, enums
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
 from utils import get_size, is_subscribed, get_poster, search_gagala, temp, get_settings, save_group_settings
 from database.users_chats_db import db
 from database.ia_filterdb import Media, get_file_details, get_search_results
-from database.filters_mdb import (
-    del_all,
-    find_filter,
-    get_filters,
-)
-import logging
+from database.filters_mdb import del_all, find_filter, get_filters
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
@@ -29,13 +23,11 @@ logger.setLevel(logging.ERROR)
 BUTTONS = {}
 SPELL_CHECK = {}
 
-
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
     k = await manual_filters(client, message)
     if k == False:
         await auto_filter(client, message)
-
 
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
@@ -91,7 +83,6 @@ async def next_page(bot, query):
         ]
     )
 
-
     if 0 < offset <= 10:
         off_set = 0
     elif offset == 0:
@@ -124,7 +115,6 @@ async def next_page(bot, query):
         pass
     await query.answer()
 
-
 @Client.on_callback_query(filters.regex(r"^spolling"))
 async def advantage_spoll_choker(bot, query):
     _, user, movie_ = query.data.split('#')
@@ -144,10 +134,9 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('<b><i>⚠ 404 Error / No Results❗ \n\n🚫 The Reason❓[<a href="https://telegram.me/HeroFlix/1371">Click Here</a>] \n📮 Please Follow Request Tips \n🔆 Request Tips › [<a href="https://telegram.me/HEROFLiX/894">Click Here</a>]</i></b>')
+            k = await query.message.edit('<b><i>💢 404 Error / No Results❗ \n\n🚫 The Reason❓[<a href="https://telegram.me/HeroFlix/1371">Click Here</a>] \n🗨 Please Follow Request Tips \n🔆 Request Tips › [<a href="https://telegram.me/HEROFLiX/894">Click Here</a>]</i></b>')
             await asyncio.sleep(60)
             await k.delete()
-
 
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
@@ -623,7 +612,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit_reply_markup(reply_markup)
     await query.answer('🔆彡[ HEROFLiX ]彡🔆')
 
-
 async def auto_filter(client, msg, spoll=False):
     if not spoll:
         message = msg
@@ -749,9 +737,6 @@ async def auto_filter(client, msg, spoll=False):
         k = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(900)
         await k.delete()
-    if spoll:
-        await msg.message.delete()
-
 
 async def advantage_spell_chok(msg):
     query = re.sub(
@@ -762,7 +747,7 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply('<b><i>⚠ 404 Error, No Results❗ \n\n🚫 The Reason❓[<a href="https://telegram.me/HeroFlix/1371">Click Here</a>] \n📮 Please Follow Request Tips \n🔆 Request Tips › [<a href="https://telegram.me/HEROFLiX/894">Click Here</a>]</i></b>')
+        k = await msg.reply('<b><i>💢 404 Error, No Results❗ \n\n🚫 The Reason❓[<a href="https://telegram.me/HeroFlix/1371">Click Here</a>] \n🗨 Please Follow Request Tips \n🔆 Request Tips › [<a href="https://telegram.me/HEROFLiX/894">Click Here</a>]</i></b>')
         await asyncio.sleep(60)
         await k.delete()    
         return
@@ -791,7 +776,7 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply('<b><i>⚠ 404 Error, No Results❗ \n\n🚫 The Reason❓[<a href="https://telegram.me/HeroFlix/1371">Click Here</a>] \n📮 Please Follow Request Tips \n🔆 Request Tips › [<a href="https://telegram.me/HEROFLiX/894">Click Here</a>]</i></b>')
+        k = await msg.reply('<b><i>💢 404 Error, No Results❗ \n\n🚫 The Reason❓[<a href="https://telegram.me/HeroFlix/1371">Click Here</a>] \n🗨 Please Follow Request Tips \n🔆 Request Tips › [<a href="https://telegram.me/HEROFLiX/894">Click Here</a>]</i></b>')
         await asyncio.sleep(60)
         await k.delete()
         return
