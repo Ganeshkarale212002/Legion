@@ -134,7 +134,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('<b><i>💢 404 Error / No Results❗ \n\n🚫 The Reason❓[<a href="https://telegram.me/HeroFlix/1371">Click Here</a>] \n🗨 Please Follow Request Tips \n🔆 Request Tips › [<a href="https://telegram.me/HEROFLiX/894">Click Here</a>]</i></b>')
+            k = await query.message.edit('<b><i>💢 404 Error / No Results❗\n\n🚫 The Reason❓[<a href="https://telegram.me/HeroFlix/1371">Click Here</a>]\n🗨 Please Follow Request Tips\n🔆 Request Tips › [<a href="https://telegram.me/HEROFLiX/894">Click Here</a>]</i></b>')
             await asyncio.sleep(60)
             await k.delete()
 
@@ -622,7 +622,7 @@ async def auto_filter(client, msg, spoll=False):
         if 2 < len(message.text) < 100:
             search = message.text
             search_ = re.sub(
-                r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|dub(bed)*|new|:|series|file|season(s)*|episode(s)*|anime|kdrama|horror|hd|full\smovie|with\ssubtitle(s)?)",
+                r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|dub(bed)*|new|-|:|series|file|season(s)*|episode(s)*|anime|kdrama|horror|hd|full\smovie|with\ssubtitle(s)?)",
                 "", search, flags=re.IGNORECASE)
             files, offset, total_results = await get_search_results(search_.lower(), offset=0, filter=True)
             if not files:
