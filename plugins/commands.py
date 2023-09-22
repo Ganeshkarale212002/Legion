@@ -40,7 +40,7 @@ async def start(client, message):
     if len(message.command) != 2:
         buttons = [[
             InlineKeyboardButton('❓How To Use Me', url=f'https://telegram.me/{DWLD}'),
-            InlineKeyboardButton('⚜ Updates', url='https://telegram.me/HeroFlix')
+            InlineKeyboardButton('⚜ Updates', url='https://telegram.me/FHDmovies24x7Official')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -81,7 +81,7 @@ async def start(client, message):
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
             InlineKeyboardButton('❓How To Use Me', url=f'https://telegram.me/{DWLD}'),
-            InlineKeyboardButton('⚜ Updates', url='https://telegram.me/HeroFlix')
+            InlineKeyboardButton('⚜ Updates', url='https://telegram.me/FHDmovies24x7Official')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -231,7 +231,7 @@ async def start(client, message):
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
-        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('🔆彡[ HEROFLiX ]彡🔆', url='https://telegram.me/HeroFlix') ] ] ),
+        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('🔆彡[ FHDmovies24x7 ]彡🔆', url='https://telegram.me/FHDmovies24x7') ] ] ),
         protect_content=True if pre == 'filep' else False,
         )
                     
