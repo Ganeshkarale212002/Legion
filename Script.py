@@ -10,8 +10,8 @@ class script(object):
 
     HELP_TXT = """𝙷𝙴𝚈 {}
 𝙷𝙴𝚁𝙴 𝙸𝚂 𝚃𝙷𝙴 𝙷𝙴𝙻𝙿 𝙵𝙾𝚁 𝙼𝚈 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂."""
-    ABOUT_TXT = """🔆彡[ @HEROFLiX ]彡🔆"""
-    SOURCE_TXT = """🔆彡[ @HEROFLiX ]彡🔆"""
+    ABOUT_TXT = """🔆彡[ @FHDmovies24x7 ]彡🔆"""
+    SOURCE_TXT = """🔆彡[ @FHDmovies24x7 ]彡🔆"""
     MANUELFILTER_TXT = """Help: <b>Filters</b>
 
 - Filter is the feature were users can set automated replies for a particular keyword and EvaMaria will respond whenever a keyword is found the message
