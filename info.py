@@ -15,35 +15,35 @@ API_ID = int(environ.get('API_ID', ')
 API_HASH = environ.get('API_HASH', ')
 BOT_TOKEN = environ.get('BOT_TOKEN', ')
 
-DWLD = environ.get("DWLD", 'HeroFlix/2198')
+DWLD = environ.get("DWLD", 'FHDmovies24x7Official/3536')
 
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
 PICS = (environ.get('PICS', 'https://te.legra.ph/file/e2b658b220739f984b32a.jpg https://te.legra.ph/file/e2b658b220739f984b32a.jpg')).split()
 
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1058015838').split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '').split()]
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '1058015838').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1089524901').split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001623403850').split()]
+auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '1089524901').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
-auth_channel = environ.get('AUTH_CHANNEL', '-1001521700370')
+auth_channel = environ.get('AUTH_CHANNEL', '-1001362105778')
 auth_grp = environ.get('AUTH_GROUP', '')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 DATABASE_URI = environ.get('DATABASE_URI', ")
-DATABASE_NAME = environ.get('DATABASE_NAME', "Ariana")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Ariana')
+DATABASE_NAME = environ.get('DATABASE_NAME', "Premium")
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Premium')
 
 SHORTNER = environ.get('SHORTNER', 'easysky.in')
-SHORTNER_API = environ.get('SHORTNER_API', '8abee50e122616d233cb904039c4fe594fe8574c')
+SHORTNER_API = environ.get('SHORTNER_API', '56cb94ebee3c5ee7d1c84808168f60acdfc50657')
 
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001652564383'))
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'herofeedbot')
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001683103329'))
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'FHD24x7FeedBot')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
 IMDB = is_enabled((environ.get('IMDB', "False")), False)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), True)
-CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", '<a href="https://telegram.me/HEROFLiX"><b><i>{file_name}</i></b></a>')
-BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", '<a href="https://telegram.me/HEROFLiX"><b><i>{file_caption}</i></b></a>')
+CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", '<a href="https://telegram.me/FHDmovies24x7Official"><b><i>{file_name}</i></b></a>')
+BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", '<a href="https://telegram.me/FHDmovies24x7Official"><b><i>{file_caption}</i></b></a>')
 IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "🎗 <i><b>{title} ({year}) {kind} </b> \n━━━━━━━━━━━━━━━━\n🎭 </i><i><b>Genre › {genres}\n⭐ Rating › {rating} / 10 </b>\n📚 </i><i><b>Story</b> › {plot} </i>")
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
