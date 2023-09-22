@@ -11,9 +11,9 @@ def is_enabled(value, default):
         return default
 
 SESSION = environ.get('SESSION', 'Media_search')
-API_ID = int(environ.get('API_ID', ')
-API_HASH = environ.get('API_HASH', ')
-BOT_TOKEN = environ.get('BOT_TOKEN', ')
+API_ID = int(environ.get('API_ID', '5997447')
+API_HASH = environ.get('API_HASH', '04fbdff99ed5edff6dfdcc4ef710d04e')
+BOT_TOKEN = environ.get('BOT_TOKEN', '6682653076:AAGdzLZs_hiee3CFDYaGKH1CuvLLp1FenBI')
 
 DWLD = environ.get("DWLD", 'FHDmovies24x7Official/3536')
 
@@ -30,9 +30,9 @@ auth_grp = environ.get('AUTH_GROUP', '')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
-DATABASE_URI = environ.get('DATABASE_URI', ")
-DATABASE_NAME = environ.get('DATABASE_NAME', "Premium")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Premium')
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Testing:212002@testing.7plrokt.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_NAME = environ.get('DATABASE_NAME', "Testing")
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Testing')
 
 SHORTNER = environ.get('SHORTNER', 'easysky.in')
 SHORTNER_API = environ.get('SHORTNER_API', '56cb94ebee3c5ee7d1c84808168f60acdfc50657')
