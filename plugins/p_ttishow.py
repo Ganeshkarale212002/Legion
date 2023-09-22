@@ -37,7 +37,7 @@ async def save_group(bot, message):
             return
         buttons = [[
             InlineKeyboardButton('📲 Support 📲', url=f"https://telegram.me/{SUPPORT_CHAT}"),
-            InlineKeyboardButton('🔆 Updates 🔆', url='https://telegram.me/HeroFlix')
+            InlineKeyboardButton('🔆 Updates 🔆', url='https://telegram.me/FHDmovies24x7Official')
         ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await message.reply_text(
@@ -54,7 +54,7 @@ async def save_group(bot, message):
                         pass
                 temp.MELCOW['welcome'] = await message.reply_photo(
                 photo="https://graph.org/file/75d4fcc66598ea1ef4941.jpg",                                              
-                                                 caption=f'<b><i>🔆 "HEROFLiX • GROUP" 亗 🔆\n•───────────────────• \n⚜Hey {u.mention}, Welcome To HeroFlix • Group. You Can Request Any Movies, Web-Series, Anime, K-Dramas, Animation etc., here...</i></b>',
+                                                 caption=f'<b><i>🔆 "FHDmovies24x7" 🔆\n•───────────────────• \n⚜Hey {u.mention}, Welcome To FHDmovies24x7 • Group. You Can Request Any Movies, Web-Series, Anime, K-Dramas, Animation etc., here...</i></b>',
                                                  reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('❓How To Download❓', url=f'https://telegram.me/{DWLD}') ] ] )
                 )
                 await asyncio.sleep(900)
