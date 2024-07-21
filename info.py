@@ -11,9 +11,9 @@ def is_enabled(value, default):
         return default
 
 SESSION = environ.get('SESSION', 'Media_search')
-API_ID = int(environ.get('API_ID', '5997447'))
-API_HASH = environ.get('API_HASH', '04fbdff99ed5edff6dfdcc4ef710d04e')
-BOT_TOKEN = environ.get('BOT_TOKEN', '6682653076:AAGrB5NO3LbYEQoWG0PlgCWPUa-henTjH34')
+API_ID = int(environ.get('API_ID', ''))
+API_HASH = environ.get('API_HASH', '')
+BOT_TOKEN = environ.get('BOT_TOKEN', '')
 
 DWLD = environ.get("DWLD", 'FHDmovies24x7Official/3536')
 
@@ -30,7 +30,7 @@ auth_grp = environ.get('AUTH_GROUP', '')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Testing:212002@testing.7plrokt.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_URI = environ.get('DATABASE_URI', "")
 DATABASE_NAME = environ.get('DATABASE_NAME', "Testing")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Testing')
 
